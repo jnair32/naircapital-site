@@ -26,14 +26,33 @@
       <div class="section-inner">
         <p class="eyebrow">Contact</p>
         <h1>Get in touch.</h1>
-        <p>For research access or general enquiries, contact Jay Nair.</p>
+        <p>For research access or general enquiries, send a private message to Nair Capital.</p>
       </div>
     </section>
     <section class="section">
       <div class="section-inner">
-        <article class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:jaynair75@gmail.com">jaynair75@gmail.com</a></p>
+        <article class="card contact-card">
+          <h3>Contact Form</h3>
+          <form class="contact-form" action="#" method="post">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Research access</option>
+              <option>General enquiry</option>
+              <option>Partnership</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button class="button form-button" type="submit">Send Message</button>
+          </form>
+          <p class="form-note">This form is ready for deployment. Connect it to your preferred form service before launch.</p>
         </article>
       </div>
     </section>
@@ -41,7 +60,6 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>© Nair Capital</span>
-      <a href="mailto:jaynair75@gmail.com">jaynair75@gmail.com</a>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
