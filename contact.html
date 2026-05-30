@@ -33,7 +33,7 @@
       <div class="section-inner">
         <article class="card contact-card">
           <h3>Contact Form</h3>
-          <form class="contact-form" action="#" method="post">
+          <form class="contact-form" action="/api/contact" method="post" data-contact-form>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
 
@@ -50,9 +50,13 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" required></textarea>
 
+            <label class="hidden-field" for="company">Company</label>
+            <input class="hidden-field" id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+
             <button class="button form-button" type="submit">Send Message</button>
+            <p class="form-status" data-form-status role="status"></p>
           </form>
-          <p class="form-note">This form is ready for deployment. Connect it to your preferred form service before launch.</p>
+          <p class="form-note">Your message will be reviewed privately by Nair Capital.</p>
         </article>
       </div>
     </section>

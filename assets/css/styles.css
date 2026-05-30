@@ -350,9 +350,32 @@ h3 {
   width: fit-content;
 }
 
+.form-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-status {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+
+.form-status[data-state="success"] {
+  color: #047857;
+}
+
+.form-status[data-state="error"] {
+  color: #b91c1c;
+}
+
 .form-note {
   font-size: 13px;
   margin-top: 14px;
+}
+
+.hidden-field {
+  display: none;
 }
 
 .page-title {
