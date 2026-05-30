@@ -18,7 +18,11 @@ function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-export async function onRequestPost(context) {
+export async function onRequest(context) {
+  if (context.request.method !== "POST") {
+    return jsonResponse({ ok: false, message: "Method not allowed." }, 405);
+  }
+
   const formData = await context.request.formData();
   const honeypot = clean(formData.get("company"), 200);
 
@@ -61,8 +65,4 @@ export async function onRequestPost(context) {
   await context.env.CONTACT_SUBMISSIONS.put(id, JSON.stringify(submission));
 
   return jsonResponse({ ok: true, message: "Thank you. Your message has been sent." });
-}
-
-export function onRequest() {
-  return jsonResponse({ ok: false, message: "Method not allowed." }, 405);
 }
